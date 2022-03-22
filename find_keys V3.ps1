@@ -8,11 +8,11 @@
 #Make sure you have Internet connection to validate your key and run powershell as administrator.
 #
 #1- Execute the script running 
-#PS> .\find_keys.ps1
+#PS> .\find_keys V3.ps1
 #It will ask you to enter your license, replace the unreadable characters with "?". For example:
 #AAAAA-BBBBB-CCCCC-D?DDD-EE???
 #You can also pass your product key during execution:
-#PS> .\find_keys.ps1 -productkey 'AAAAA-BBBBB-CCCCC-D?DDD-EE????'
+#PS> .\find_keys V3.ps1 -productkey 'AAAAA-BBBBB-CCCCC-D?DDD-EE????'
 #
 #The script will ask you for possible characters for each "?", let it blank or write * if it is totally unreadable. 
 #Result: If everything went well, check that your Windows has been activated correctly, a text document will be opened
