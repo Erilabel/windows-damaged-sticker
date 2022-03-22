@@ -22,7 +22,7 @@
 #LIST OF VALID CHARACTERS: 2,3,4,5,6,7,8,9,b,c,d,f,g,h,j,k,m,n,p,q,r,t,v,w,x,y
 #
 param ($productkey)
-$keyOption = '2','3','4','5','6','7','8','9','b','c','d','f','g','h','j','k','m','n','p','q','r','t','v','w','x','y','-','?'
+$keyOption = '2','3','4','5','6','7','8','9','b','c','d','f','g','h','j','k','m','n','p','q','r','t','v','w','x','y','-','?','*'
 
 function makeArray ([string] $productkey){
 	$key = $productkey.split('?')
@@ -34,9 +34,9 @@ function makeArray ([string] $productkey){
 			$keyArray += $value
 			break
 		}
-		Write-Host ""
-		Write-Host "$j of $($key.Count-1)" -ForegroundColor Yellow -NoNewline
-		Write-Host " - Possible characters for ?. Let it blank or write * for all: " -NoNewline
+		Write-Host "-Write characters for " -NoNewline
+		Write-Host "$j of $($key.Count-1) ? symbol" -ForegroundColor Yellow -NoNewline
+		Write-Host ", let it blank or write * for all: " -NoNewline
 		Write-Host " $productkey :" -ForegroundColor Yellow -NoNewline
 		$unknownKeys = ""
 		$keyPress.virtualkeycode = ""
@@ -63,6 +63,7 @@ function makeArray ([string] $productkey){
 		$unknownKeys = $unknownKeys.ToUpper()
 		$combinations = $unknownKeys.ToCharArray()
 		$keyArray += $value,($combinations)
+		Write-Host ""
 	}
 	return $keyArray
 }
